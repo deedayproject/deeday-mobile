@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 import TabNavigator from '@/navigation/tab-navigator';
-import Fonts from '@/constants/Fonts';
+import Storybook from './storybook';
 
 export const AppContainer = createAppContainer(TabNavigator);
 
@@ -11,7 +11,7 @@ interface State {
   fontsLoaded: boolean;
 }
 
-export default class App extends Component<{}, State> {
+class App extends Component<{}, State> {
   public constructor(props: {}) {
     super(props);
     this.state = {
@@ -37,3 +37,11 @@ export default class App extends Component<{}, State> {
     ];
   }
 }
+
+console.log(process.env)
+
+const STORYBOOK_START = false; // Change here to run Storybook instead of app
+
+export default STORYBOOK_START
+  ? Storybook
+  : App;
