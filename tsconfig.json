@@ -12,6 +12,6 @@
       "@/*": ["./src/*"],
       "assets/*": ["./assets/*"]
     },
-    "rootDirs": ["./src", "./storybook"]
+    "rootDirs": ["./src"]
   }
 }

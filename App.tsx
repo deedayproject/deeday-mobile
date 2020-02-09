@@ -3,7 +3,6 @@ import { createAppContainer } from 'react-navigation';
 import { StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 import TabNavigator from '@/navigation/tab-navigator';
-import Storybook from './storybook';
 
 export const AppContainer = createAppContainer(TabNavigator);
 
@@ -18,9 +17,9 @@ class App extends Component<{}, State> {
       fontsLoaded: false,
     };
   }
-  componentDidMount() {
+  componentDidMount(): void {
     Font.loadAsync({
-      'gilroy': require('./assets/fonts/Gilroy-Regular.ttf'),
+      gilroy: require('./assets/fonts/Gilroy-Regular.ttf'),
       'gilroy-bold': require('./assets/fonts/Gilroy-Bold.ttf'),
       'gilroy-medium': require('./assets/fonts/Gilroy-Medium.ttf'),
       'gilroy-light': require('./assets/fonts/Gilroy-Light.ttf'),
@@ -29,7 +28,7 @@ class App extends Component<{}, State> {
       .then(() => this.setState({ fontsLoaded: true }));
   }
 
-  render() {
+  render(): React.ReactNode {
     const { fontsLoaded } = this.state;
     return [
       <StatusBar key={0} barStyle={'dark-content'} />,
@@ -38,10 +37,4 @@ class App extends Component<{}, State> {
   }
 }
 
-console.log(process.env)
-
-const STORYBOOK_START = false; // Change here to run Storybook instead of app
-
-export default STORYBOOK_START
-  ? Storybook
-  : App;
+export default App;

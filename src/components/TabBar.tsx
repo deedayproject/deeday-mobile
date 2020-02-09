@@ -9,23 +9,22 @@ interface Props {
   navigation?: NavigationTabProp;
 }
 
-interface State {}
-
-export default class TabBar extends Component<Props, State> {
+export default class TabBar extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
+    const navigationState = this.props.navigation.state;
     return (
       <SafeAreaView>
         <View style={styles.tabBarContainer}>
-          {this.props.navigation.state.routes.map(item => (
+          {navigationState.routes.map((item) => (
             <TabBarItem
               key={item.routeName}
               title={item.routeName}
-              isActive={item.routeName === this.props.navigation.state.routes[this.props.navigation.state.index].routeName}
+              isActive={item.routeName === navigationState.routes[navigationState.index].routeName}
               iconName={item.params.icon}
               onPress={() => this.props.navigation.navigate(item.key)} />
           ))}
