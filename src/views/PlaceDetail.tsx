@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ScrollView, View, Image, Text,
+  ScrollView, View, Image, Text, TouchableOpacity,
 } from 'react-native';
 import Component from '@/components/Component';
 import StarRating from '@/components/StarRating';
@@ -12,6 +12,10 @@ import Comment from '@/components/Comment';
 import style from './styles/PlaceDetail';
 
 export default class PlaceDetail extends Component {
+  goToComments(): void {
+    console.log('Going to comments...');
+  }
+
   render(): React.ReactNode {
     return (
       <View style={style.placeDetailView}>
@@ -68,6 +72,21 @@ export default class PlaceDetail extends Component {
             {
               [...Array(3)].map((el, key) => <Comment key={key} />)
             }
+            <TouchableOpacity onPress={() => this.goToComments()}>
+              <Text style={style.link}>Afficher les {80} autres commentaires</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={style.similarProducts}>
+            <Text style={[style.title, { marginHorizontal: 25 }]}>Produits Similaires</Text>
+          </View>
+          <View style={{}}>
+            <Text style={[style.title, { marginHorizontal: 25 }]}>Et avec ça ?</Text>
+            <Text style={[style.descriptionContent, { marginHorizontal: 25 }]}>
+              Vous avez trouvé un lieu capable de respecter vos consignes
+              environnementales ? Excellent ! Mais il vous reste encore bien du
+              chemin à parcourir n’est-ce pas ! A quels prestataires faire appel
+              pour le buffet ? les boissons ? Quelle animation choisir ?
+            </Text>
           </View>
         </ScrollView>
       </View>

@@ -85,6 +85,11 @@ export default StyleSheet.create({
     color: Colors.gray,
     textAlignVertical: 'bottom',
   },
+  link: {
+    color: Colors.fluoGreen,
+    fontFamily: 'gilroy-bold',
+    fontSize: 16,
+  },
   priceSpan: {
     fontSize: 26,
     fontFamily: 'gilroy-bold',
@@ -124,5 +129,9 @@ export default StyleSheet.create({
     fontFamily: 'gilroy-bold',
   },
   phone: {
+  },
+  similarProducts: {
+    backgroundColor: Colors.paleGreen,
+    paddingVertical: 15,
   },
 });
