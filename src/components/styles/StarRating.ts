@@ -5,6 +5,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   star: {
-    marginRight: 4,
+    marginRight: 3,
   },
 });
