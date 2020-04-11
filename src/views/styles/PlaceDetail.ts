@@ -134,4 +134,29 @@ export default StyleSheet.create({
     backgroundColor: Colors.paleGreen,
     paddingVertical: 15,
   },
+  footer: {
+    shadowColor: '#000000',
+    backgroundColor: Colors.white,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
+    height: 75,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingLeft: 40,
+    paddingVertical: 15,
+    paddingRight: 10,
+  },
+  footerPrice: {
+    fontSize: 22,
+    fontWeight: '500',
+  },
+  footerPriceUnit: {
+    color: Colors.altGray,
+    fontSize: 16,
+  },
 });

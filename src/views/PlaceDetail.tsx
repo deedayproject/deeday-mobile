@@ -5,6 +5,7 @@ import {
 import Component from '@/components/Component';
 import StarRating from '@/components/StarRating';
 import EnvironmentalImpact from '@/components/EnvironmentalImpact';
+import BookButton from '@/components/BookButton';
 import background from '@/assets/img/background-cafe-barge.png';
 import mapPin from '@/assets/img/map-pin.png';
 import Phone from '@/assets/img/phone.png';
@@ -89,6 +90,13 @@ export default class PlaceDetail extends Component {
             </Text>
           </View>
         </ScrollView>
+        <View style={style.footer}>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+            <Text style={style.footerPrice}>850€</Text>
+            <Text style={style.footerPriceUnit}>/jour</Text>
+          </View>
+          <BookButton />
+        </View>
       </View>
     );
   }

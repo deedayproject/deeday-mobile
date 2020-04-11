@@ -13,7 +13,6 @@ import styles from './styles/ItemPreview';
 import Container from './Container';
 import StarRating from './StarRating';
 
-
 export default class ItemPreview extends Component {
   static indicatorColor = {
     low: {
